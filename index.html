@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display-box">
+        <input type="text" class="display" id="display" readonly />
+      </div>
+      <div class="button-row">
+        <input
+          type="button"
+          value="AC"
+          class="button function-button"
+          onclick="deleteHistory()"
+        />
+        <input
+          type="button"
+          value="CE"
+          class="button function-button"
+          onclick="clearDisplay()"
+        />
+        <input
+          type="button"
+          value="("
+          class="button function-button"
+          onclick="addToDisplay('(')"
+        />
+        <input
+          type="button"
+          value=")"
+          class="button function-button"
+          onclick="addToDisplay(')')"
+        />
+        <input
+          type="button"
+          value="/"
+          class="button arithmetic-button"
+          onclick="addToDisplay('/')"
+        />
+      </div>
+      <div class="button-row">
+        <input
+          type="button"
+          value="7"
+          class="button"
+          onclick="addToDisplay('7')"
+        />
+        <input
+          type="button"
+          value="8"
+          class="button"
+          onclick="addToDisplay('8')"
+        />
+        <input
+          type="button"
+          value="9"
+          class="button"
+          onclick="addToDisplay('9')"
+        />
+        <input
+          type="button"
+          value="*"
+          class="button arithmetic-button"
+          onclick="addToDisplay('*')"
+        />
+      </div>
+      <div class="button-row">
+        <input
+          type="button"
+          value="4"
+          class="button"
+          onclick="addToDisplay('4')"
+        />
+        <input
+          type="button"
+          value="5"
+          class="button"
+          onclick="addToDisplay('5')"
+        />
+        <input
+          type="button"
+          value="6"
+          class="button"
+          onclick="addToDisplay('6')"
+        />
+        <input
+          type="button"
+          value="-"
+          class="button arithmetic-button"
+          onclick="addToDisplay('-')"
+        />
+      </div>
+      <div class="button-row">
+        <input
+          type="button"
+          value="1"
+          class="button"
+          onclick="addToDisplay('1')"
+        />
+        <input
+          type="button"
+          value="2"
+          class="button"
+          onclick="addToDisplay('2')"
+        />
+        <input
+          type="button"
+          value="3"
+          class="button"
+          onclick="addToDisplay('3')"
+        />
+        <input
+          type="button"
+          value="+"
+          class="button arithmetic-button"
+          onclick="addToDisplay('+')"
+        />
+      </div>
+      <div class="button-row">
+        <input
+          type="button"
+          value="<"
+          class="button"
+          onclick="ShowHistory(`back`)"
+        />
+        <input
+          type="button"
+          value=">"
+          class="button"
+          onclick="ShowHistory(`forward`)"
+        />
+        <input
+          type="button"
+          value="0"
+          class="button"
+          onclick="addToDisplay('0')"
+        />
+        <input
+          type="button"
+          value="."
+          class="button"
+          onclick="addToDisplay('.')"
+        />
+        <input
+          type="button"
+          value="="
+          class="button function-button"
+          onclick="calculate()"
+        />
+      </div>
+      <div class="button-row">
+        <input
+          type="button"
+          value="sin"
+          class="button scientific-button"
+          onclick="trigFunction('sin')"
+        />
+        <input
+          type="button"
+          value="cos"
+          class="button scientific-button"
+          onclick="trigFunction('cos')"
+        />
+        <input
+          type="button"
+          value="tan"
+          class="button scientific-button"
+          onclick="trigFunction('tan')"
+        />
+        <input
+          type="button"
+          value="log"
+          class="button scientific-button"
+          onclick="logFunction('log')"
+        />
+        <input
+          type="button"
+          value="ln"
+          class="button scientific-button"
+          onclick="logFunction('ln')"
+        />
+      </div>
+      <div class="button-row">
+        <input
+          type="button"
+          value="√"
+          class="button scientific-button"
+          onclick="sqrtFunction()"
+        />
+        <input
+          type="button"
+          value="x²"
+          class="button scientific-button"
+          onclick="powerFunction(2)"
+        />
+        <input
+          type="button"
+          value="x³"
+          class="button scientific-button"
+          onclick="powerFunction(3)"
+        />
+        <input
+          type="button"
+          value="xⁿ"
+          class="button scientific-button"
+          onclick="addToDisplay('^')"
+        />
+        <input
+          type="button"
+          value="!"
+          class="button scientific-button"
+          onclick="factorialFunction()"
+        />
+      </div>
+      <div class="button-row">
+        <input
+          type="button"
+          value="|x|"
+          class="button scientific-button"
+          onclick="absoluteFunction()"
+        />
+        <input
+          type="button"
+          value="asin"
+          class="button scientific-button"
+          onclick="inverseTrigFunction('asin')"
+        />
+        <input
+          type="button"
+          value="acos"
+          class="button scientific-button"
+          onclick="inverseTrigFunction('acos')"
+        />
+        <input
+          type="button"
+          value="atan"
+          class="button scientific-button"
+          onclick="inverseTrigFunction('atan')"
+        />
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
