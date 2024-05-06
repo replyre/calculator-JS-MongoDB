@@ -5,7 +5,7 @@
 -  AC to delete all the data in database
 -  `<` `>`  previous/next values
 
-## Installtion
+## Installation
 
 **Front-End**
 - Run index.html
