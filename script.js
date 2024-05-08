@@ -29,16 +29,33 @@ function getData() {
       return response.json();
     })
     .then((data) => {
-      // Handle the response data here
-
       Data = data;
     })
+    .then(() => {
+      writeHistory();
+    })
     .catch((error) => {
-      // Handle errors here
       console.error("There was a problem with the fetch operation:", error);
     });
 }
 getData();
+function writeHistory() {
+  document.getElementById("historyData").innerHTML = "";
+  Data.forEach((e) => {
+    const element = document.createElement("p");
+    element.innerHTML = `<span>Calculation:${e.id} </span>${e.expression} = ${e.calculation}`;
+    document.getElementById("historyData").appendChild(element);
+    console.log("data", Data);
+  });
+
+  document.querySelectorAll("#historyData p").forEach((e) => {
+    e.addEventListener("click", (ele) => {
+      var value = ele.target.innerText;
+      console.log(value.split("=")[1]);
+      document.getElementById("display").value = Number(value.split("=")[1]);
+    });
+  });
+}
 let index = 10;
 function ShowHistory(pos) {
   document.getElementById("display").value = "";
@@ -86,6 +103,7 @@ function deleteHistory() {
 
 function calculate() {
   var expression = document.getElementById("display").value;
+  console.log(expression);
   try {
     var result = eval(expression);
     document.getElementById("display").value = result;
@@ -96,8 +114,9 @@ function calculate() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: "24",
+        id: String(Data.length + 1),
         calculation: result,
+        expression,
       }),
     })
       .then((response) => {
