@@ -15,10 +15,9 @@ app.post("/send", (req, res) => {
     .catch((e) => res.json(e));
 });
 app.delete("/delete-all", (req, res) => {
-  // Delete all entries from the collection
   CalcModel.deleteMany({})
-    .then(() => res.json({ message: "All entries deleted successfully" })) // Respond with success message
-    .catch((error) => res.status(500).json({ error: error.message })); // Handle errors
+    .then(() => res.json({ message: "All entries deleted successfully" }))
+    .catch((error) => res.status(500).json({ error: error.message }));
 });
 app.get("/getCalc", async (req, res) => {
   try {

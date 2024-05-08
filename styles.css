@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -60,4 +65,42 @@ body {
 
 .scientific-button {
   background-color: #aedcf7;
+}
+.history {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.history h2 {
+  margin: 0px;
+  background-color: salmon;
+  padding: 10px;
+}
+
+#historyData {
+  height: 100%;
+  background-color: #daebf4;
+  padding-top: 10px;
+}
+#historyData p {
+  margin: 20px;
+  padding: 10px;
+  font-size: 20px;
+  display: flex;
+  font-weight: bold;
+  border-bottom: 2px black solid;
+  cursor: pointer;
+}
+#historyData p span {
+  position: relative;
+  font-size: 10px;
+  top: -20px;
+  color: rebeccapurple;
+  font-weight: bold;
+  text-align: right;
 }
